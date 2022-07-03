@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Enter The size of 1st matrix ");
+    int a,b,aa,bb;
+    scanf("%d%d",&a,&b);
+    printf("Enter The size of 2nd matrix ");
+    scanf("%d%d",&aa,&bb);
+    if(a==bb)
+    {
+        int arr1[a][b],arr2[aa][bb],arr3[a][bb];
+        printf("Enter The 1st matrix ");
+        for (int i=0;i<a;i++)
+        for (int j=0;j<b;j++)
+        scanf("%d",&arr1[i][j]);
+        
+        printf("Enter The 2nd matrix ");
+        for (int i=0;i<aa;i++)
+        for (int j=0;j<bb;j++)
+        scanf("%d",&arr2[i][j]);
+        
+        for (int i=0;i<a;i++)
+        {
+            for (int j=0;j<bb;j++)
+            {
+                int d=0;
+                for (int k=0;k<b;k++)
+                {
+                    d=d+(arr1[i][k]*arr2[k][j]);
+                }
+                arr3[i][j]=d;
+                d=0;
+            }
+        }
+        printf(" The matrix After multiplication is\n");
+        for (int i=0;i<a;i++)
+        {
+            for (int j=0;j<bb;j++)
+            printf("%d ",arr3[i][j]);
+            printf("\n");
+        }
+    }
+    return 0;
+}   
+    
+    
