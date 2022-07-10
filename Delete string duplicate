@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    printf("Enter the word ");
+    char arr1[30],arr2[30],a[2];
+    a[1]='\0';
+    scanf("%[^\n]*s",arr1);
+    printf("\nEnter the entered word is %s ",arr1);
+    strcpy(arr2,"");
+    for(int i=0;i<strlen(arr1);i++)
+    {
+        a[0]=arr1[i];
+        int f=0;
+        for(int j=0;j<strlen(arr2);j++)
+        {
+            if(arr1[i]==arr2[j])
+            {
+                f=1;
+                break;
+            }
+        }
+        if(f==0)
+        {
+            strcat(arr2,a);
+        }
+    }
+    printf("\nThe  word after duplicate is removed is  %s",arr2);
+
+    return 0;
+}
